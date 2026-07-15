@@ -3,8 +3,8 @@ const chatForm = document.getElementById("chatForm");
 const userInput = document.getElementById("userInput");
 const chatWindow = document.getElementById("chatWindow");
 
-// PLACEHOLDER API URL: Replace this string with your actual Cloudflare Worker URL when deployed.
-const API_URL = "YOUR_CLOUDFLARE_WORKER_URL_HERE";
+// Your secure Cloudflare Worker endpoint
+const API_URL = "https://spring-heart-3a64.amitaaronsahoo.workers.dev/";
 
 // LevelUp: Maintain Conversation History & Configure the Chatbot Prompt
 let conversationHistory = [
@@ -57,7 +57,7 @@ chatForm.addEventListener("submit", async (e) => {
 
   } catch (error) {
     console.error("Error:", error);
-    updateMessage(loadingMsgId, "Oops! I couldn't connect. Make sure your API_URL placeholder is replaced with your real Cloudflare Worker URL.");
+    updateMessage(loadingMsgId, "Oops! I couldn't connect. Please check the network tab in your browser's developer tools.");
   }
 });
 
